@@ -295,7 +295,8 @@ public class RNPublisherBannerViewManager extends ViewGroupManager<ReactPublishe
             case "smartBanner":
                 return AdSize.SMART_BANNER;
             default:
-                return AdSize.BANNER;
+                String[] adSizes = adSize.split("x");
+                return new AdSize(Integer.parseInt(adSizes[0]), Integer.parseInt(adSizes[1]));
         }
     }
 
